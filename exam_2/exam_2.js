@@ -5,16 +5,14 @@ let basicData = {
   dividNumber: 5
 }
 
-// function exampleOne(count, min, max) {
-//   let exampleArr = [];
-//   for (let i = 0; i < count; i++) {
-//     exampleArr.push(((Math.random() * max) + min).toFixed(2));
-//   }
-//   console.log(exampleArr);
-//   return exampleArr;
-// }
-
-// exampleOne(basicData.count, basicData.min, basicData.max);
+function exampleOne(count, min, max) {
+  let exampleArr = [];
+  for (let i = 0; i < count; i++) {
+    exampleArr.push(((Math.random() * max) + min).toFixed(2));
+  }
+  console.log(exampleArr);
+  return exampleArr;
+}
 
 function exampleTwo(array, dividNumber) {
   let exampleObject = {
@@ -22,7 +20,7 @@ function exampleTwo(array, dividNumber) {
     b: []
   }
   for (let num of array) {
-    if (typeof (num) === "number" && Array.isArray(array)) {
+    if (typeof (num) === "number" && Array.isArray(array) === true) {
       if (typeof (dividNumber) === "number") {
         if (dividNumber > num) {
           exampleObject.a.push(num);
@@ -40,37 +38,31 @@ function exampleTwo(array, dividNumber) {
   return exampleObject;
 }
 
-let a = exampleTwo([1, 2, 3, 4, 5, 6, 7, 8], basicData.dividNumber)
-console.log(a)
-// function exampleThree(array){
-//   let value = 0;
-//   for (let num of array){
-//     value += num;
-//   }
-//   console.log(value)
-//   return value;
-// }
+function exampleThree(array){
+  let value = 0;
+  for (let num of array){
+    value += num;
+  }
+  console.log(value)
+  return value;
+}
 
-// exampleThree([1,2]);
-
-// function exampleFour(object) {
-//   let value;
-//   if (Array.isArray(object) === true) {
-//     for (let num of object) {
-//       if (typeof (num) === "number") {
-//         value = true;
-//       } else {
-//         value = false;
-//       }
-//     }
-//   } else {
-//     console.error("object는 배열이 아니예요!")
-//   }
-//   console.log(value)
-//   return value;
-// }
-
-// exampleFour([1, 2, 3])
+function exampleFour(object) {
+  let value;
+  if (Array.isArray(object) === true) {
+    for (let num of object) {
+      if (typeof (num) === "number") {
+        value = true;
+      } else {
+        value = false;
+      }
+    }
+  } else {
+    console.error("object는 배열이 아니예요!")
+  }
+  console.log(value)
+  return value;
+}
 
 function exampleFive(objectOne, objectTwo) {
   let value;
@@ -95,11 +87,8 @@ function exampleFive(objectOne, objectTwo) {
   }
 
   value = objectOneSum + objectTwo_A_Sum + objectTwo_B_Sum;
-
-  console.log(value)
+  
   return value;
 }
-
-exampleFive(basicData, a)
 
 console.log(exampleFive(basicData, exampleTwo([1, 2, 3, 4, 5, 6, 7, 8], basicData.dividNumber)));

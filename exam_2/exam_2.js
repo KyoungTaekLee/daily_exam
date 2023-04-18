@@ -10,9 +10,11 @@ function exampleOne(count, min, max) {
   for (let i = 0; i < count; i++) {
     exampleArr.push(((Math.random() * max) + min).toFixed(2));
   }
-  console.log(exampleArr);
   return exampleArr;
 }
+
+// 리턴값 변수에 저장하기
+// const a = exampleOne(basicData.count, basicData.min, basicData.max);
 
 function exampleTwo(array, dividNumber) {
   let exampleObject = {
@@ -20,7 +22,7 @@ function exampleTwo(array, dividNumber) {
     b: []
   }
   for (let num of array) {
-    if (typeof (num) === "number" && Array.isArray(array) === true) {
+    if (Array.isArray(array) === true) {
       if (typeof (dividNumber) === "number") {
         if (dividNumber > num) {
           exampleObject.a.push(num);
@@ -37,6 +39,10 @@ function exampleTwo(array, dividNumber) {
 
   return exampleObject;
 }
+
+// 리턴값 변수에 저장하기
+// const b = exampleTwo(a, 5);
+// console.log(b);
 
 function exampleThree(array){
   let value = 0;
@@ -60,7 +66,7 @@ function exampleFour(object) {
   } else {
     console.error("object는 배열이 아니예요!")
   }
-  console.log(value)
+  console.log(value);
   return value;
 }
 
@@ -91,4 +97,4 @@ function exampleFive(objectOne, objectTwo) {
   return value;
 }
 
-console.log(exampleFive(basicData, exampleTwo([1, 2, 3, 4, 5, 6, 7, 8], basicData.dividNumber)));
+console.log(exampleFive(basicData, exampleTwo(exampleOne(basicData.count, basicData.min, basicData.max), basicData.dividNumber)));

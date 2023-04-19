@@ -8,21 +8,31 @@ let basicData = {
 function exampleOne(count, min, max) {
   let exampleArr = [];
   for (let i = 0; i < count; i++) {
+    
     exampleArr.push(((Math.random() * max) + min).toFixed(2));
+
+  }
+  for(let num of exampleArr){
+    num = parseFloat(num);
   }
   return exampleArr;
 }
 
 // 리턴값 변수에 저장하기
 // const a = exampleOne(basicData.count, basicData.min, basicData.max);
+// console.log(a);
 
 function exampleTwo(array, dividNumber) {
   let exampleObject = {
     a: [],
     b: []
   }
+
   for (let num of array) {
-    if (Array.isArray(array) === true) {
+    if(typeof(num) === "string" && Array.isArray(array) === true){
+      num = parseFloat(num);
+    }
+    if (typeof(num) === "number" && Array.isArray(array) === true) {
       if (typeof (dividNumber) === "number") {
         if (dividNumber > num) {
           exampleObject.a.push(num);
@@ -84,13 +94,20 @@ function exampleFive(objectOne, objectTwo) {
     objectOneSum += num;
   }
   objectTwo_A_Array = Object.values(objectTwo.a);
+  console.log(objectTwo_A_Array);
   for (let num of objectTwo_A_Array) {
     objectTwo_A_Sum += num;
   }
   objectTwo_B_Array = Object.values(objectTwo.b);
+  console.log(objectTwo_B_Array);
+
   for (let num of objectTwo_B_Array) {
     objectTwo_B_Sum += num;
   }
+
+  console.log(objectOneSum);
+  console.log(objectTwo_A_Sum);
+  console.log(objectTwo_B_Sum);
 
   value = objectOneSum + objectTwo_A_Sum + objectTwo_B_Sum;
   

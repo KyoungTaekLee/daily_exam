@@ -1,6 +1,6 @@
 function exampleOne(first, second, dataType) {
   if (typeof (first) !== dataType && typeof (second) !== dataType) {
-    return new Error(`매개변수 first, second는 모두 ${datatype} 타입이어야 합니다.`);
+    return new Error(`매개변수 first, second는 모두 ${dataType} 타입이어야 합니다.`);
   }
 }
 
@@ -46,7 +46,7 @@ function exampleThree(array, functionOne, functionTwo) {
   // } else {
   //   return new Error("두 인자 모두 함수로 설정하세요")
   // }
-  // exampleOne(functionOne,functionTwo);
+  exampleOne(functionOne,functionTwo);
 
   if (typeof (array) === "object") {
     console.log("인자는 배열 입니다.")
@@ -58,9 +58,9 @@ function exampleThree(array, functionOne, functionTwo) {
         // } else if (array.length % 2 === 1) {
         //   array.length++;
         // }
-        if(arrayLengthEven(array) === true){
+        if (arrayLengthEven(array) === true) {
           console.log("배열의 길이는 짝수입니다.")
-        }else{
+        } else {
           array.length++;
         }
       } else {
@@ -89,6 +89,6 @@ function exampleThree(array, functionOne, functionTwo) {
   return arrayResult;
 }
 
-console.log(exampleThree(basicData, exampleOne(3, 4, "number"), isExampleTwo(1, 2)));
+console.log(exampleThree(basicData, exampleOne(), isExampleTwo()));
 // Q 위의 콘솔을 확인하여
 // 함수 exampleThree()의 리턴값을 통해 재조립된 배열을 만드시오.

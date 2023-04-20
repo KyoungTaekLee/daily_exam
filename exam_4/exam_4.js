@@ -46,6 +46,7 @@ function exampleThree(array, functionOne, functionTwo) {
   // } else {
   //   return new Error("두 인자 모두 함수로 설정하세요")
   // }
+  exampleOne(functionOne,functionTwo);
 
   if (typeof (array) === "object") {
     console.log("인자는 배열 입니다.")

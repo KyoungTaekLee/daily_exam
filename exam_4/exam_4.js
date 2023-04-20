@@ -46,16 +46,21 @@ function exampleThree(array, functionOne, functionTwo) {
   // } else {
   //   return new Error("두 인자 모두 함수로 설정하세요")
   // }
-  exampleOne(functionOne,functionTwo);
+  // exampleOne(functionOne,functionTwo);
 
   if (typeof (array) === "object") {
     console.log("인자는 배열 입니다.")
     for (let i of array) {
       if (typeof (i) === "number") {
         console.log("인자는 정수 입니다");
-        if (array.length % 2 === 0) {
+        // if (array.length % 2 === 0) {
+        //   console.log("배열의 길이는 짝수입니다.")
+        // } else if (array.length % 2 === 1) {
+        //   array.length++;
+        // }
+        if(arrayLengthEven(array) === true){
           console.log("배열의 길이는 짝수입니다.")
-        } else if (array.length % 2 === 1) {
+        }else{
           array.length++;
         }
       } else {
